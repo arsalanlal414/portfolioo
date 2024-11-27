@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
+  --background-main: #F9F9FB;
   --background: #ffffff;
   --foreground: #171717;
+  --color-text: #424257;
+  --color-text-l: #8B8BA7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +18,41 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--background-main);
+}
+
+section{
+  background-color: white;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--color-text)
+}
+p{
+  color: var(--color-text-l)
+}
+
+code, pre {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 20s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
 }

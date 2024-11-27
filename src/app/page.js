@@ -1,101 +1,180 @@
 import Image from "next/image";
+import profile from '../assests/profile_pic.png'
+import framer from '../assests/framer.png'
+import project from '../assests/project1.png'
+import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
+import { GoDotFill } from "react-icons/go";
+import { FaGithub } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { IoLocationOutline } from "react-icons/io5";
+import { LuSparkle } from "react-icons/lu";
 
 export default function Home() {
+    const projects = [
+      {
+        title: "Predict Website made in Framer",
+        category: "Web Design",
+        imageSrc: project, // Replace with actual image path
+        link: "#", // Replace with actual project link
+      },
+      {
+        title: "Payble Website made in Framer",
+        category: "Web Design",
+        imageSrc: project, // Replace with actual image path
+        link: "#", // Replace with actual project link
+      },
+      // Add more projects as needed
+    ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div id="homePage" className="w-full">
+      <section className="w-full mb-4">
+        <div className="flex w-full justify-between gap-8">
+          <Image
+            src={profile}
+            alt="Picture of the author"
+            className="w-[200px] h-[200px]"
+            placeholder="blur"
+          />  
+          <div className="flex flex-col w-full justify-between">
+            <div className="flex justify-between items-center">
+              <p className="text-sm py-1.5 px-3 bg-green-200 rounded-full text-green-700 flex items-center gap-1"><GoDotFill /> Available for work</p>
+              <div className="flex gap-6 text-lg items-center">
+                <CiTwitter />
+                <CiInstagram />
+                <FaGithub />
+                <CiLinkedin />
+                
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <h2 className="font-semibold text-4xl">Hi there! I'm Arsalan!</h2>
+              <p>
+                I'm a passionate web designer dedicated to crafting 
+                stunning and user-friendly online experiences.
+              </p>
+            </div>
+            <div className="flex justify-between">
+              <p className="flex gap-2 items-center"> <IoLocationOutline /> London, United Kingdom</p>
+              <button className="flex gap-2 items-center">More about Me <FaArrowRightLong /></button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="relative overflow-hidden w-full py-2 mt-6">
+          <div className="flex animate-ticker gap-4 whitespace-nowrap">
+            {[...Array(8)].map((_, index) => (
+              <p key={index} className="flex gap-4 items-center text-base sm:text-[18px] font-medium">
+                <LuSparkle /> Web Design
+              </p>
+            ))}
+            {/* Duplicate items to make the ticker seamless */}
+            {[...Array(8)].map((_, index) => (
+              <p key={index + 8} className="flex gap-4 items-center text-base sm:text-[18px] font-medium">
+                <LuSparkle /> Web Design
+              </p>
+            ))}
+          </div>
+        </div>
+
+
+      </section>
+      <section className="w-full">
+        <div className="flex justify-between mb-4">
+          <h2 className="text-2xl font-semibold">Stack</h2>
+          <p className="flex gap-4 items-center">Full Stack <FaArrowRightLong /></p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <div
+              key={index}
+              className="flex p-4 min-h-[80px] items-center w-full border-b rounded-lg hover:shadow-lg cursor-pointer"
+            >
+              <Image
+                src={framer}
+                alt={`Picture of the author ${index + 1}`}
+                className="w-[44px] h-[44px]"
+                placeholder="blur"
+              />
+              <div className="flex flex-col justify-between h-full ml-3">
+                <h3 className="text-[20px] font-semibold">Framer {index + 1}</h3>
+                <p className="text-sm">Web Design</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </section>
+      {/* <section className="w-full">
+        <div className="flex justify-between mb-4">
+          <h2 className="text-2xl font-semibold">Stack</h2>
+          <p className="flex gap-4 items-center">Full Stack <FaArrowRightLong /></p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {Array.from({ length: 2 }).map((_, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center cursor-pointer"
+            >
+              <div className="w-[330px] h-[500px] overflow-hidden">
+                <Image
+                  src={project}
+                  alt={`Picture of the author ${index + 1}`}
+                  className="w-full h-full hover:scale-125"
+                  placeholder="blur"
+                />
+              </div>
+              <div className="flex flex-col justify-between h-full ml-3">
+                <h3 className="text-[20px] font-semibold">Framer {index + 1}</h3>
+                <p className="text-sm">Web Design</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </section> */}
+      <section className="mt-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-3xl font-semibold">Projects</h2>
+            <a
+              href="#"
+              className="font-medium hover:underline flex items-center"
+            >
+              All Projects <span className="ml-2">→</span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                className="group block rounded-lg overflow-hidden max-w-[332px]"
+              >
+                {/* Image */}
+                <div className="relative h-[332px] max-w-[332px] overflow-hidden">
+                  <Image
+                    src={project.imageSrc}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="group-hover:scale-105 transition-transform w-full h-full"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-4">
+                  <p className="text-sm ">{project.category}</p>
+                  <h3 className="text-lg font-semibold">
+                    {project.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
