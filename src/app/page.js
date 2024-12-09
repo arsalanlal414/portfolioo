@@ -64,14 +64,14 @@ export default function Home() {
         title: "CEO Summit Solutions",
         imageSrc: profile,
         review:
-          "Natalie's ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
+          "Natalie ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
       },
       {
         name: "Michelle Rodriguez",
         title: "Founder Sparkle Boutique",
         imageSrc: profile,
         review:
-          "Natalie's designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
+          "Natalie designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
       },
     ];
     
