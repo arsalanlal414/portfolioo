@@ -71,7 +71,7 @@ export default function Home() {
         title: "Founder Sparkle Boutique",
         imageSrc: profile,
         review:
-          "Natalie designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
+          "Natalie designs exceeded our expectations. Her strategic approach to user experience significantly improved our sites performance.",
       },
     ];
     
