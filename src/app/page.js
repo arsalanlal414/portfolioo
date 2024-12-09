@@ -74,7 +74,6 @@ export default function Home() {
           "Natalie's designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
       },
     ];
-
     
   return (
     <div id="homePage" className="w-full">
