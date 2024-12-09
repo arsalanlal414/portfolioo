@@ -1,6 +1,9 @@
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 // Local Fonts
 const geistSans = localFont({
@@ -19,7 +22,7 @@ const geistMono = localFont({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap", // Ensures fonts load quickly for user experience
+  display: "swap",
 });
 
 export const metadata = {
@@ -34,10 +37,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <main className="w-screen flex flex-col items-center">
-          <div className="lg:w-[800px] overflow-hidden">
+          <div className="lg:max-w-[900px] overflow-hidden">
             {children}
           </div>
         </main>
+        <div className="w-screen flex flex-col items-center mt-16">
+         <Footer />
+        </div>
       </body>
     </html>
   );

@@ -1,13 +1,17 @@
+'use client';
+
 import Image from "next/image";
-import profile from '../assests/profile_pic.png'
-import framer from '../assests/framer.png'
-import project from '../assests/project1.png'
+import profile from './assests/profile_pic.png'
+import framer from './assests/framer.png'
+import project from './assests/project1.png'
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { GoDotFill } from "react-icons/go";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
-import { LuSparkle } from "react-icons/lu";
+import Slider from "react-slick";
+import { TbWorld } from "react-icons/tb";
+import { SocialIcons } from "./components/SocialIcons";
 
 export default function Home() {
     const projects = [
@@ -23,11 +27,58 @@ export default function Home() {
         imageSrc: project, // Replace with actual image path
         link: "#", // Replace with actual project link
       },
-      // Add more projects as needed
     ];
+
+    const settings = {
+      dots: false, // Show navigation dots
+      infinite: true, // Infinite scroll
+      speed: 500, // Transition speed
+      slidesToShow: 3, // Number of cards visible at once
+      slidesToScroll: 1, // Number of slides to scroll at once
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2, // For tablets
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1, // For mobile
+          },
+        },
+      ],
+    };
+  
+    const clients = [
+      {
+        name: "Sarah Thompson",
+        title: "Marketing Director",
+        imageSrc: profile,
+        review:
+          "Working with Natalie was a game-changer for our online presence. Her creativity and attention to detail transformed our website into a visual masterpiece.",
+      },
+      {
+        name: "John Richards",
+        title: "CEO Summit Solutions",
+        imageSrc: profile,
+        review:
+          "Natalie's ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
+      },
+      {
+        name: "Michelle Rodriguez",
+        title: "Founder Sparkle Boutique",
+        imageSrc: profile,
+        review:
+          "Natalie's designs exceeded our expectations. Her strategic approach to user experience significantly improved our site's performance.",
+      },
+    ];
+
+    
   return (
     <div id="homePage" className="w-full">
-      <section className="w-full mb-4">
+      <section className="w-full p-6">
         <div className="flex w-full justify-between gap-8">
           <Image
             src={profile}
@@ -38,13 +89,7 @@ export default function Home() {
           <div className="flex flex-col w-full justify-between">
             <div className="flex justify-between items-center">
               <p className="text-sm py-1.5 px-3 bg-green-200 rounded-full text-green-700 flex items-center gap-1"><GoDotFill /> Available for work</p>
-              <div className="flex gap-6 text-lg items-center">
-                <CiTwitter />
-                <CiInstagram />
-                <FaGithub />
-                <CiLinkedin />
-                
-              </div>
+              <SocialIcons />
             </div>
             <div className="flex flex-col">
               <h2 className="font-semibold text-4xl">Hi there! I'm Arsalan!</h2>
@@ -62,14 +107,32 @@ export default function Home() {
         <div className="relative overflow-hidden w-full py-2 mt-6">
           <div className="flex animate-ticker gap-4 whitespace-nowrap">
             {[...Array(8)].map((_, index) => (
-              <p key={index} className="flex gap-4 items-center text-base sm:text-[18px] font-medium">
-                <LuSparkle /> Web Design
+              <p key={index} className="flex gap-4 items-center my-black text-base sm:text-[18px] font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <g clipPath="url(#clip0_2_1372)">
+                    <path d="M5.32597 8.56603C6.30997 8.73003 7.07997 9.50003 7.24397 10.484L7.96997 14.84L8.69597 10.484C8.85997 9.50003 9.62997 8.73003 10.614 8.56603L14.97 7.84003L10.614 7.11403C9.62997 6.95003 8.85997 6.18003 8.69597 5.19603L7.96997 0.840027L7.24397 5.19603C7.07997 6.18003 6.30997 6.95003 5.32597 7.11403L0.969971 7.84003L5.32597 8.56603Z" fill="#424257"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_1372">
+                      <rect width="14" height="14" fill="white" transform="translate(0.969971 0.840027)"/>
+                    </clipPath>
+                  </defs>
+                </svg> Web Design
               </p>
             ))}
-            {/* Duplicate items to make the ticker seamless */}
+
             {[...Array(8)].map((_, index) => (
-              <p key={index + 8} className="flex gap-4 items-center text-base sm:text-[18px] font-medium">
-                <LuSparkle /> Web Design
+              <p key={index + 8} className="flex gap-4 items-center my-black text-base sm:text-[18px] font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <g clipPath="url(#clip0_2_1372)">
+                    <path d="M5.32597 8.56603C6.30997 8.73003 7.07997 9.50003 7.24397 10.484L7.96997 14.84L8.69597 10.484C8.85997 9.50003 9.62997 8.73003 10.614 8.56603L14.97 7.84003L10.614 7.11403C9.62997 6.95003 8.85997 6.18003 8.69597 5.19603L7.96997 0.840027L7.24397 5.19603C7.07997 6.18003 6.30997 6.95003 5.32597 7.11403L0.969971 7.84003L5.32597 8.56603Z" fill="#424257"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_1372">
+                      <rect width="14" height="14" fill="white" transform="translate(0.969971 0.840027)"/>
+                    </clipPath>
+                  </defs>
+                </svg> Web Design
               </p>
             ))}
           </div>
@@ -77,10 +140,15 @@ export default function Home() {
 
 
       </section>
-      <section className="w-full">
-        <div className="flex justify-between mb-4">
-          <h2 className="text-2xl font-semibold">Stack</h2>
-          <p className="flex gap-4 items-center">Full Stack <FaArrowRightLong /></p>
+      <section className="w-full p-6">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-semibold">Stack</h2>
+          <a
+            href="#"
+            className="font-medium hover:scale-105 flex items-center"
+          >
+            Full Stack <span className="ml-2">→</span>
+          </a>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -104,42 +172,13 @@ export default function Home() {
         </div>
 
       </section>
-      {/* <section className="w-full">
-        <div className="flex justify-between mb-4">
-          <h2 className="text-2xl font-semibold">Stack</h2>
-          <p className="flex gap-4 items-center">Full Stack <FaArrowRightLong /></p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {Array.from({ length: 2 }).map((_, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center cursor-pointer"
-            >
-              <div className="w-[330px] h-[500px] overflow-hidden">
-                <Image
-                  src={project}
-                  alt={`Picture of the author ${index + 1}`}
-                  className="w-full h-full hover:scale-125"
-                  placeholder="blur"
-                />
-              </div>
-              <div className="flex flex-col justify-between h-full ml-3">
-                <h3 className="text-[20px] font-semibold">Framer {index + 1}</h3>
-                <p className="text-sm">Web Design</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-      </section> */}
-      <section className="mt-10">
+      <section className="w-full p-6">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 ">
             <h2 className="text-3xl font-semibold">Projects</h2>
             <a
               href="#"
-              className="font-medium hover:underline flex items-center"
+              className="font-medium hover:scale-105 flex items-center"
             >
               All Projects <span className="ml-2">→</span>
             </a>
@@ -150,9 +189,9 @@ export default function Home() {
               <a
                 key={index}
                 href={project.link}
-                className="group block rounded-lg overflow-hidden max-w-[332px]"
+                className="group block border-b rounded-lg hover:shadow-lg overflow-hidden max-w-[332px]"
               >
-                {/* Image */}
+                
                 <div className="relative h-[332px] max-w-[332px] overflow-hidden">
                   <Image
                     src={project.imageSrc}
@@ -163,7 +202,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-4">
                   <p className="text-sm ">{project.category}</p>
                   <h3 className="text-lg font-semibold">
@@ -173,6 +211,32 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="w-full p-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-semibold text-center mb-10">What Clients Say</h2>
+          <Slider {...settings} className="slider">
+            {clients.map((client, index) => (
+              <div key={index} className="p-2 cursor-pointer">
+                <div className="bg-gray-50 rounded-xl shadow-md p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full">
+                    <Image
+                      src={client.imageSrc}
+                      alt={client.name}
+                      width={64}
+                      height={64}
+                      className="object-cover"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold">{client.name}</h3>
+                  <p className="text-sm text-gray-500 mb-4">{client.title}</p>
+                  <p className="text-gray-700 text-sm">{`"${client.review.slice(0,140)}${client.review.length>140 ? ".....": ""}"`}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
     </div>
