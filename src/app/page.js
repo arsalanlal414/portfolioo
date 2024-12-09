@@ -64,14 +64,14 @@ export default function Home() {
         title: "CEO Summit Solutions",
         imageSrc: profile,
         review:
-          "Natalie&apos;s ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
+          "Natalie's ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
       },
       {
         name: "Michelle Rodriguez",
         title: "Founder Sparkle Boutique",
         imageSrc: profile,
         review:
-          "Natalie&apos;s designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
+          "Natalie's designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
       },
     ];
 
@@ -232,7 +232,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-semibold">{client.name}</h3>
                   <p className="text-sm text-gray-500 mb-4">{client.title}</p>
-                  <p className="text-gray-700 text-sm">{`"${client.review.slice(0,140)}${client.review.length>140 ? ".....": ""}"`}</p>
+                  <p className="text-gray-700 text-sm">{`"${client.review.slice(0,133)}${client.review.length>130 ? ".....": ""}"`}</p>
                 </div>
               </div>
             ))}
