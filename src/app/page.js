@@ -64,14 +64,14 @@ export default function Home() {
         title: "CEO Summit Solutions",
         imageSrc: profile,
         review:
-          "Natalie's ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
+          "Natalie&apos;s ability to blend aesthetics with functionality is unparalleled. She not only understood our brand but elevated it through her design.",
       },
       {
         name: "Michelle Rodriguez",
         title: "Founder Sparkle Boutique",
         imageSrc: profile,
         review:
-          "Natalie's designs exceeded our expectations. Her strategic approach to user experience significantly improved our site's performance.",
+          "Natalie&apos;s designs exceeded our expectations. Her strategic approach to user experience significantly improved our site&apos;s performance.",
       },
     ];
 
@@ -92,9 +92,9 @@ export default function Home() {
               <SocialIcons />
             </div>
             <div className="flex flex-col">
-              <h2 className="font-semibold text-4xl">Hi there! I'm Arsalan!</h2>
+              <h2 className="font-semibold text-4xl">Hi there! I&apos;m Arsalan!</h2>
               <p>
-                I'm a passionate web designer dedicated to crafting 
+                I&apos;m a passionate web designer dedicated to crafting 
                 stunning and user-friendly online experiences.
               </p>
             </div>
