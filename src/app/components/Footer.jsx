@@ -4,11 +4,11 @@ import { SocialIcons } from "./SocialIcons";
 
 export default function Footer() {
     return (
-      <footer className="bg-white py-12 rounded-[24px] px-4 lg:w-[900px] overflow-hidden">
+      <footer className="bg-white my-8 rounded-[24px] p-4 md:p-8 lg:w-[800px] ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-8">
             <h2 className="text-xl font-semibold mb-4">Have a Project Idea?</h2>
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-900 transition">
+            <button className="bg-gray-800 text-white px-6 text-sm md:text-base py-3 rounded-full hover:bg-gray-900 transition">
               Let&apos;s Connect →
             </button>
           </div>
