@@ -1,14 +1,19 @@
 import Image from "next/image";
 import qrCode from "../assests/QrCode.png";
 import { SocialIcons } from "./SocialIcons";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+    const handleNavigation = () => {
+      router.push('/contact'); 
+    };
     return (
       <footer className="bg-white my-8 rounded-[24px] p-4 md:p-8 lg:w-[800px] ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-8">
             <h2 className="text-xl font-semibold mb-4">Have a Project Idea?</h2>
-            <button className="bg-gray-800 text-white px-6 text-sm md:text-base py-3 rounded-full hover:bg-gray-900 transition">
+            <button className="bg-gray-800 text-white px-6 text-sm md:text-base py-3 rounded-full hover:bg-gray-900 transition" onClick={handleNavigation}>
               Let&apos;s Connect →
             </button>
           </div>

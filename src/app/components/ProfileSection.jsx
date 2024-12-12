@@ -2,13 +2,19 @@
 import React from 'react'
 import { SocialIcons } from './SocialIcons'
 import { GoDotFill } from 'react-icons/go'
-
-import profile from '../assests/profile_pic.png'
+import { useRouter } from 'next/navigation';
+import profile from '../assests/profile.png'
+// import profile from '../assests/profile_pic.png'
 import { IoLocationOutline } from 'react-icons/io5'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import Image from 'next/image'
 
+
 const ProfileSection = ({prof}) => {
+  const router = useRouter();
+  const handleNavigation = (url) => {
+    router.push('/about'); // Replace '/about' with your target route
+  };
   return (
     <section className="w-full mt-4">
       <div className="flex flex-col md:flex-row w-full justify-between gap-8">
@@ -31,15 +37,15 @@ const ProfileSection = ({prof}) => {
               Hi there! I&apos;m Arsalan!
             </h2>
             <p className="mt-2 text-sm md:text-base break-words md:break-normal overflow-hidden text-ellipsis">
-              I&apos;m a passionate web designer dedicated to crafting stunning and user-friendly online experiences.
+              I&apos;m a passionate MERN stack developer specializing in building efficient, scalable, and high-performance web applications.
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center mt-4 gap-4">
             <p className="flex gap-2 items-center text-sm md:text-base">
-              <IoLocationOutline /> London, United Kingdom
+              <IoLocationOutline /> Karachi, Pakistan
             </p>
-            <button className={`${prof ? "hidden" : "flex"} gap-2 items-center text-sm md:text-base`}>
+            <button className={`${prof ? "hidden" : "flex"} gap-2 items-center text-sm md:text-base`} onClick={handleNavigation}>
               More about Me <FaArrowRightLong />
             </button>
           </div>
@@ -47,10 +53,7 @@ const ProfileSection = ({prof}) => {
       </div>
       <div className={`${prof ? "relative" : "hidden"} overflow-hidden w-full py-2 mt-8`}>
         <p>
-        I specialize in creating websites that not only look great but also provide a top-notch user 
-        experience. My journey in web design began with a fascination for the ever-evolving world of 
-        technology and design. Over the years, I&apos;ve honed my skills to transform complex concepts into 
-        visually appealing, user-friendly websites.
+        I specialize in developing websites and web applications that deliver exceptional performance and seamless user experiences. My journey in web development began with a passion for solving problems through technology. Over the years, I&apos;ve mastered the MERN stack and other modern frameworks to build efficient, scalable, and responsive solutions that meet the needs of users and businesses alike.
         </p>
       </div>
 
