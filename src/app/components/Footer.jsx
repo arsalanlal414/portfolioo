@@ -29,7 +29,6 @@ export default function Footer() {
                 />  
             </div>
           </div>
-
           <div className="text-sm text-gray-500">
             <p>© Copyright 2023. All rights Reserved.</p>
             <p>
