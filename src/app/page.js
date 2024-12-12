@@ -11,22 +11,24 @@ import project from './assests/project1.png'
 
 import Slider from "react-slick";
 import ProfileSection from "./components/ProfileSection";
+import Link from "next/link";
+import ProjectsCard from "./components/ProjectsCard";
 
 export default function Home() {
-  const projects = [
-    {
-      title: "Predict Website made in Framer",
-      category: "Web Design",
-      imageSrc: project, 
-      link: "#",
-    },
-    {
-      title: "Payble Website made in Framer",
-      category: "Web Design",
-      imageSrc: project, 
-      link: "#", 
-    },
-  ];
+  // const projects = [
+  //   {
+  //     title: "Predict Website made in Framer",
+  //     category: "Web Design",
+  //     imageSrc: project, 
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Payble Website made in Framer",
+  //     category: "Web Design",
+  //     imageSrc: project, 
+  //     link: "#", 
+  //   },
+  // ];
 
   const settings = {
     dots: true, 
@@ -150,12 +152,13 @@ export default function Home() {
       <section className="w-full mt-8">
         <div className="flex flex-wrap justify-between items-center mb-6">
           <h2 className="text-2xl sm:text-3xl font-semibold">Stack</h2>
-          <a
-            href="#"
+          <Link
+            href="/stack"
             className="font-medium text-sm sm:text-base hover:scale-105 flex items-center transition-transform"
+            
           >
             Full Stack <span className="ml-2">→</span>
-          </a>
+          </Link>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -168,7 +171,6 @@ export default function Home() {
                 src={imgUrl}
                 alt={`stack image`}
                 className="w-[44px] h-[44px]"
-                // placeholder="blur"
               />
               <div className="flex flex-col justify-evenly h-full ml-3">
                 <h3 className="text-[16px] font-semibold">{title}</h3>
@@ -184,40 +186,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-1 sm:px-4">
           <div className="flex flex-wrap justify-between items-center mb-6">
             <h2 className="text-2xl sm:text-3xl font-semibold">Projects</h2>
-            <a
-              href="#"
+            <Link
+              href="/projects"
               className="font-medium text-sm sm:text-base hover:scale-105 flex items-center transition-transform"
             >
               All Projects <span className="ml-2">→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <a
-                key={index}
-                href={project.link}
-                className="group block border-b rounded-lg hover:shadow-lg overflow-hidden max-w-[332px]"
-              >
-                
-                <div className="relative h-[240px] md:h-[332px] max-w-[332px] overflow-hidden">
-                  <Image
-                    src={project.imageSrc}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="group-hover:scale-105 transition-transform w-full h-full"
-                  />
-                </div>
-
-                <div className="p-4">
-                  <p className="text-sm ">{project.category}</p>
-                  <h3 className="text-base sm:text-lg font-semibold">
-                    {project.title}
-                  </h3>
-                </div>
-              </a>
-            ))}
+            <ProjectsCard limit={2}/>
           </div>
         </div>
       </section>

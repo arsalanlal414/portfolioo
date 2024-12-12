@@ -2,26 +2,23 @@
 import React from 'react'
 import { SocialIcons } from './SocialIcons'
 import { GoDotFill } from 'react-icons/go'
-import { useRouter } from 'next/navigation';
 import profile from '../assests/profile.png'
 // import profile from '../assests/profile_pic.png'
 import { IoLocationOutline } from 'react-icons/io5'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import Image from 'next/image'
+import Link from 'next/link';
 
 
 const ProfileSection = ({prof}) => {
-  const router = useRouter();
-  const handleNavigation = (url) => {
-    router.push('/about'); // Replace '/about' with your target route
-  };
+  
   return (
     <section className="w-full mt-4">
       <div className="flex flex-col md:flex-row w-full justify-between gap-8">
         <Image
           src={profile}
           alt="Picture of the author"
-          className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] mx-auto md:mx-0"
+          className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] mx-auto md:mx-0 rounded-xl"
           placeholder="blur"
         />
         <div className="flex flex-col w-full justify-between">
@@ -45,9 +42,9 @@ const ProfileSection = ({prof}) => {
             <p className="flex gap-2 items-center text-sm md:text-base">
               <IoLocationOutline /> Karachi, Pakistan
             </p>
-            <button className={`${prof ? "hidden" : "flex"} gap-2 items-center text-sm md:text-base`} onClick={handleNavigation}>
+            <Link href='/about' className={`${prof ? "hidden" : "flex"} gap-2 items-center text-sm md:text-base`}>
               More about Me <FaArrowRightLong />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -59,10 +56,10 @@ const ProfileSection = ({prof}) => {
 
       <div className="relative overflow-hidden w-full py-2 mt-6">
         <div className="flex animate-ticker gap-4 whitespace-nowrap">
-          {[...Array(8)].map((_, index) => (
+          {["Web Develop", "Web Develop", "Web Develop", "Web Develop","Web Develop","Web Develop","Web Develop"].map((text, index) => (
             <p
               key={index}
-              className="flex gap-4 items-center text-sm sm:text-base md:text-lg font-medium whitespace-nowrap"
+              className="flex gap-4 items-center text-sm md:text-base font-medium whitespace-nowrap"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +85,7 @@ const ProfileSection = ({prof}) => {
                   </clipPath>
                 </defs>
               </svg>
-              Web Design
+              {text}
             </p>
           ))}
         </div>
