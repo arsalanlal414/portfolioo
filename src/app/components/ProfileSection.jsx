@@ -49,7 +49,7 @@ const ProfileSection = ({prof}) => {
         <p>
         I specialize in creating websites that not only look great but also provide a top-notch user 
         experience. My journey in web design began with a fascination for the ever-evolving world of 
-        technology and design. Over the years, I've honed my skills to transform complex concepts into 
+        technology and design. Over the years, I&apos;ve honed my skills to transform complex concepts into 
         visually appealing, user-friendly websites.
         </p>
       </div>

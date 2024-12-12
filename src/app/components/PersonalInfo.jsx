@@ -11,11 +11,12 @@ const PersonalInfo = ({title}) => {
         </div>
         <div className='flex flex-col gap-6'>
             {Array.from({ length: 3 }).map((_, index) => (
-                <InfoCard 
-                    title="Bachelor's Degree in Web Design and Development"
-                    info="XYZ University, 2010"
-                    index={index}
-                />
+                <div className='flex p-2 pb-4 gap-4 border-b rounded-lg border-gray-100 shadow-sm hover:shadow-md cursor-pointer transition-shadow duration-500 ease-in-out' key={index}>
+                    <InfoCard 
+                        title="Bachelor&apos;s Degree in Web Design and Development"
+                        info="XYZ University, 2010"
+                    />
+                </div>
             ))}
         </div>
         

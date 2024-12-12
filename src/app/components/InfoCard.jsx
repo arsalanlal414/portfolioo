@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import framer from '../assests/framer.png'
 
-function InfoCard({title, info, place, index}) {
+function InfoCard({title, info, place}) {
   return (
-    <div className='flex p-2 pb-4 gap-4 border-b rounded-lg border-gray-100 shadow-sm hover:shadow-md cursor-pointer transition-shadow duration-500 ease-in-out' key={index}>
+    <>
         <Image
             src={framer}
             alt={`Picture of the author`}
@@ -16,7 +16,7 @@ function InfoCard({title, info, place, index}) {
             <p className='text-sm'>{place}</p>
             <p className='text-base'>{info}</p>
         </div>
-    </div>
+    </>
   )
 }
 

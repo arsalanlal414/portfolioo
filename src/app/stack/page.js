@@ -10,14 +10,16 @@ const Page = () => {
         </div>
         <div className='flex flex-col gap-6'>
         {Array.from({ length: 8 }).map((_, index) => (
-          <InfoCard 
-            title="Bachelor's Degree in Web Design and Development"
-            place="XYZ University, 2010"
-            info="Framer serves as my go-to tool for creating interactive prototypes. I use it to bring 
-              designs to life, allowing stakeholders to experience the user flow and interactions 
-              before development begins. It's invaluable for refining the user experience."
-            index={index}
-          />
+           <div className='flex p-2 pb-4 gap-4 border-b rounded-lg border-gray-100 shadow-sm hover:shadow-md cursor-pointer transition-shadow duration-500 ease-in-out' key={index}>
+            <InfoCard 
+              title="Bachelor&apos;s Degree in Web Design and Development"
+              place="XYZ University, 2010"
+              info="Framer serves as my go-to tool for creating interactive prototypes. I use it to bring 
+                designs to life, allowing stakeholders to experience the user flow and interactions 
+                before development begins. It&apos;s invaluable for refining the user experience."
+
+            />
+          </div>
         ))}
         </div>
       </section>

@@ -7,7 +7,7 @@ import Image from 'next/image';
 const page = () => {
   return (
     <section className="w-full my-12 mb-16 flex flex-col items-center justify-between gap-6">
-        <h2 className='text-4xl font-semibold mt-10'>Let's work <br />Together!</h2>
+        <h2 className='text-4xl font-semibold mt-10'>Let&apos;s work <br />Together!</h2>
         <div className='flex flex-col gap-2'>
             <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoMail/> email@gmail.com</p>
             <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoCall /> +92n3492034372</p>
