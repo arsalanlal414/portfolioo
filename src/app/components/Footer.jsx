@@ -25,7 +25,7 @@ export default function Footer() {
                     src={qrCode}
                     alt="QR Code"
                     className="h-40 w-40"
-                    placeholder="blur"
+                    // placeholder="blur"
                 />  
             </div>
           </div>

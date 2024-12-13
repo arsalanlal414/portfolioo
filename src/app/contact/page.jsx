@@ -8,9 +8,9 @@ const page = () => {
   return (
     <section className="w-full my-12 mb-16 flex flex-col items-center justify-between gap-6">
         <h2 className='text-4xl font-semibold mt-10'>Let&apos;s work <br />Together!</h2>
-        <div className='flex flex-col gap-2'>
-            <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoMail/> email@gmail.com</p>
-            <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoCall /> +92n3492034372</p>
+        <div className='flex flex-col'>
+            <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoCall /> +92 3492034372</p>
+            <p className='flex gap-2 justify-center items-center p-2 px-4 hover:bg-gray-100 rounded-full cursor-pointer text-sm'><IoMail/> arsalanlal414@gmail.com</p>
         </div>
         <SocialIcons />
         <form className="w-full lg:w-1/2">
@@ -47,7 +47,7 @@ const page = () => {
                 src={qrCode}
                 alt="QR Code"
                 className="h-40 w-40"
-                placeholder="blur"
+                // placeholder="blur"
             />  
         </div>
         <div className="text-sm text-gray-500 items-center flex flex-col">

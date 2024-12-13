@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PersonalInfo from "../components/PersonalInfo";
 import ProfileSection from "../components/ProfileSection";
 
@@ -9,12 +10,12 @@ export default function Page() {
       <section className='w-full mt-8'>
         <div className="flex flex-wrap justify-between items-center mb-6">
           <h2 className="text-2xl sm:text-3xl font-semibold">Stack</h2>
-          <a
-            href="#"
+          <Link
+            href="/stack"
             className="font-medium text-sm sm:text-base hover:scale-105 flex items-center transition-transform"
           >
             Full Stack <span className="ml-2">→</span>
-          </a>
+          </Link>
         </div>
         <div className="relative overflow-hidden w-full py-2 mt-4">
           <p>

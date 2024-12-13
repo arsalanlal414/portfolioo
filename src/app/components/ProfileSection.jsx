@@ -19,7 +19,7 @@ const ProfileSection = ({prof}) => {
           src={profile}
           alt="Picture of the author"
           className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] mx-auto md:mx-0 rounded-xl"
-          placeholder="blur"
+          // placeholder="blur"
         />
         <div className="flex flex-col w-full justify-between">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
