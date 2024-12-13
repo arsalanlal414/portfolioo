@@ -9,7 +9,7 @@ const ProjectsCard = ({limit}) => {
         id: 0,
         title: "Fyrre Magazine",
         description: "Ultimate destination for premium coffee, tea, chocolate, and bakery delights worldwide.",
-        image: "/images/projects/fyrre-magazine.png",
+        image: "/images/projects/capture.PNG",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/arsalanlal414/Fyrre-Magazine",
         previewUrl: "https://fyrre-magazine-five.vercel.app/",
