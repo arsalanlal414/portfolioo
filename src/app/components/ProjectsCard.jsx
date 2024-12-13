@@ -11,7 +11,7 @@ const ProjectsCard = ({limit}) => {
             description: "Ultimate destination for premium coffee, tea, chocolate, and bakery delights worldwide.",
             image: "/images/projects/fyrre-magazine.png",
             tag: ["All", "Web"],
-            gitUrl: "https://javatimescaffe.com/en",
+            gitUrl: "https://github.com/arsalanlal414/Fyrre-Magazine",
             previewUrl: "https://fyrre-magazine-five.vercel.app/",
           },
         {
@@ -74,25 +74,25 @@ const ProjectsCard = ({limit}) => {
 
   return (
     <>
-        {projects.slice(0, limit && limit).map((project) => (
+        {projects.slice(0, limit ? limit : projects.length%2 !== 0 ? projects.length - 1 : projects.length).map((project) => (
             <Link
             key={project.id}
             href={project.previewUrl}
             target="_blank"
-            className="group block border-b rounded-lg hover:shadow-lg overflow-hidden max-w-[332px]"
+            className="group p-2 block border-b rounded-lg hover:shadow-lg overflow-hidden max-w-[332px]"
             >
             
-            <div className="relative h-[240px] md:h-[240px] overflow-hidden">
+            <div className="relative h-[240px] w-full md:h-[240px] overflow-hidden">
                 <Image
                 src={project.image}
                 alt={project.title}
                 layout="fill"
                 objectFit="fill"
-                className="group-hover:scale-105 transition-transform w-full"
+                className="group-hover:scale-105 transition-transform w-full rounded-lg"
                 />
             </div>
 
-            <div className="p-4">
+            <div className="py-4">
                 <h3 className="text-base sm:text-lg font-semibold">
                 {project.title}
                 </h3>
