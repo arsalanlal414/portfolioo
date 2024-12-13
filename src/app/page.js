@@ -127,8 +127,8 @@ export default function Home() {
                 <div className="bg-gray-50 rounded-xl shadow-md p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full">
                     <Image
-                      src={client.imageSrc}
-                      alt={client.name}
+                      src={client?.imageSrc}
+                      alt={client?.name}
                       width={64}
                       height={64}
                       className="object-cover"

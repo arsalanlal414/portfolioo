@@ -22,10 +22,10 @@ export default function Footer() {
             <SocialIcons />
             <div className="mb-4 bg-white shadow-lg rounded-lg p-4">
                <Image
-                    src={qrCode}
-                    alt="QR Code"
-                    className="h-40 w-40"
-                    // placeholder="blur"
+                  src={qrCode}
+                  alt="QR Code"
+                  className="h-40 w-40"
+                  // placeholder="blur"
                 />  
             </div>
           </div>

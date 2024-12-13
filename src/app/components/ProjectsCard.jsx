@@ -81,11 +81,11 @@ const ProjectsCard = ({limit}) => {
             >
             <div className="relative h-[240px] w-full md:h-[240px] overflow-hidden">
                 <Image
-                src={project.image}
-                alt={project.title}
-                layout="fill"
-                objectFit="fill"
-                className="group-hover:scale-105 transition-transform w-full rounded-lg"
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="fill"
+                  className="group-hover:scale-105 transition-transform w-full rounded-lg"
                 />
             </div>
 

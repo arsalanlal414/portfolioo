@@ -92,7 +92,6 @@ const Page = () => {
               place={content}
               imgUrl={imgUrl}
               info={info}
-
             />
           </div>
         ))}
