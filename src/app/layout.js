@@ -3,12 +3,7 @@ import { Inter } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-import { GrHomeRounded } from "react-icons/gr";
-import { AiOutlineUser } from "react-icons/ai";
-import { LuLayers, LuMail } from "react-icons/lu";
-import { BsGrid } from "react-icons/bs";
-import Link from "next/link";
-import FooterWrapper from "./components/FooterWrapper";
+import Footer from "./components/Footer";
 import BottomNav from "./components/BottomNav";
 
 const geistSans = localFont({
@@ -30,8 +25,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Portfolio Website",
-  description: "Created by Muhammad Arsalan",
+  title: 'Home - Portfolio Website',
+  description: 'Welcome to the portfolio website of Muhammad Arsalan.',
 };
 
 export default function RootLayout({ children }) {
@@ -40,16 +35,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased w-[100vw] overflow-x-hidden`}
       >
-        
-        <BottomNav />
-        
+        <BottomNav /> 
         <main className="w-full flex flex-col items-center">
           <div className="w-full lg:w-[800px]">{children}</div>
         </main>
-
-        <div className="w-full flex flex-col items-center">
-          <FooterWrapper />
-        </div>
+        <Footer />
       </body>
     </html>
   );

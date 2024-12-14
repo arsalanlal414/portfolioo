@@ -18,7 +18,7 @@ const BottomNav = () => {
   ]
 
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 py-3 px-3 bg-gray-50 bg-opacity-90 shadow-lg flex items-center justify-center gap-2 text-xl rounded-full z-10 md:gap-3">
+    <nav className="fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 py-3 px-3 bg-gray-50 bg-opacity-90 shadow-lg flex items-center justify-center gap-2 text-xl rounded-full z-10 md:gap-3">
       {data.map(({ href, icon, label }) => (
         <Link
           key={href}
@@ -31,7 +31,7 @@ const BottomNav = () => {
           </span>
         </Link>
       ))}
-    </div>
+    </nav>
   );
 };
 

@@ -9,22 +9,9 @@ import ProfileSection from "./components/ProfileSection";
 import Link from "next/link";
 import ProjectsCard from "./components/ProjectsCard";
 import StacksCards from "./components/StacksCards";
+import SectionHeader from "./components/SectionHeader";
 
 export default function Home() {
-  // const projects = [
-  //   {
-  //     title: "Predict Website made in Framer",
-  //     category: "Web Design",
-  //     imageSrc: project, 
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Payble Website made in Framer",
-  //     category: "Web Design",
-  //     imageSrc: project, 
-  //     link: "#", 
-  //   },
-  // ];
 
   const settings = {
     dots: true, 
@@ -78,39 +65,17 @@ export default function Home() {
     },
   ];
 
-  
-  
-    
   return (
     <div id="homePage" className="w-full p-4">
       <ProfileSection prof={false}/>
       <section className="w-full mt-8">
-        <div className="flex flex-wrap justify-between items-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Stack</h2>
-          <Link
-            href="/stack"
-            className="font-medium text-sm sm:text-base hover:scale-105 flex items-center transition-transform"
-            
-          >
-            Full Stack <span className="ml-2">→</span>
-          </Link>
-        </div>
+        <SectionHeader title="Stack" navUrl="stack" navText="Full Stack"/>
         <StacksCards limit={6}/>
-        
-
       </section>
 
       <section className="w-full mt-8">
         <div className="max-w-7xl mx-auto px-1 sm:px-4">
-          <div className="flex flex-wrap justify-between items-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-semibold">Projects</h2>
-            <Link
-              href="/projects"
-              className="font-medium text-sm sm:text-base hover:scale-105 flex items-center transition-transform"
-            >
-              All Projects <span className="ml-2">→</span>
-            </Link>
-          </div>
+          <SectionHeader title="Projects" navUrl="projects" navText="All Projects"/>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
             <ProjectsCard limit={2}/>
