@@ -13,34 +13,6 @@ import SectionHeader from "./components/SectionHeader";
 
 export default function Home() {
 
-  const settings = {
-    dots: true, 
-    infinite: true, 
-    speed: 500, 
-    slidesToShow: 3.05, 
-    slidesToScroll: 1, 
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3.05, 
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2.03, 
-        },
-      },
-      {
-        breakpoint: 425,
-        settings: {
-          slidesToShow: 1.03, 
-        },
-      },
-    ],
-  };
-
   const clients = [
     {
       name: "Sarah Thompson",
@@ -65,6 +37,42 @@ export default function Home() {
     },
   ];
 
+
+  const duplicatedSlides = [...clients, ...clients];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 0, // No transition delay
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true, // Keep it true
+    autoplaySpeed: 0, // Continuous scroll
+    cssEase: "linear", // Smooth scrolling
+    pauseOnHover: false, 
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3.05,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.03,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1.03,
+        },
+      },
+    ],
+  };
+
+  
   return (
     <div id="homePage" className="w-full p-4">
       <ProfileSection prof={false}/>
@@ -86,26 +94,29 @@ export default function Home() {
       <section className="w-full mt-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-xl md:text-3xl font-semibold text-center mb-10">What Clients Say</h2>
-          <Slider {...settings} className="slider">
-            {clients.map((client, index) => (
-              <div key={index} className="p-2 cursor-pointer">
-                <div className="bg-gray-50 rounded-xl shadow-md p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full">
-                    <Image
-                      src={client?.imageSrc}
-                      alt={client?.name}
-                      width={64}
-                      height={64}
-                      className="object-cover"
-                    />
+          
+          <div className="custom-slider-container">
+            <Slider {...settings} className="slider">
+              {duplicatedSlides.map((client, index) => (
+                <div key={index} className="p-2 cursor-pointer">
+                  <div className="bg-gray-50 rounded-xl shadow-md p-6 text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full">
+                      <Image
+                        src={client?.imageSrc}
+                        alt={client?.name}
+                        width={64}
+                        height={64}
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold">{client.name}</h3>
+                    <p className="text-sm text-gray-500 mb-4">{client.title}</p>
+                    <p className="text-gray-700 text-sm">{`"${client.review}"`}</p>
                   </div>
-                  <h3 className="text-lg font-semibold">{client.name}</h3>
-                  <p className="text-sm text-gray-500 mb-4">{client.title}</p>
-                  <p className="text-gray-700 text-sm">{`"${client.review}"`}</p>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
     </div>

@@ -65,3 +65,35 @@ code, pre {
 .slick-dots li.slick-active button:before {
   color: #3182ce; /* Blue-500 */
 }
+
+/* Custom slider container */
+.custom-slider-container .slick-track {
+  display: flex;
+  animation: scrollAnimation 20s linear infinite;
+}
+
+.custom-slider-container:hover .slick-track {
+  animation-play-state: paused; /* Stop instantly on hover */
+}
+
+/* Continuous scroll animation */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll half width for duplicates */
+  }
+}
+
+.slide {
+  min-width: 300px; 
+  margin: 0 10px;
+  background-color: #ccc;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
