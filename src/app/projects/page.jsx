@@ -3,7 +3,7 @@ import project from '../assests/project1.png'
 import Image from 'next/image';
 import ProjectsCard from '../components/ProjectsCard';
 
-const page = () => {
+const Page = () => {
 
     const projects = [
         {
@@ -71,4 +71,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
