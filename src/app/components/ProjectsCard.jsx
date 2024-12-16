@@ -6,14 +6,14 @@ const ProjectsCard = ({limit}) => {
 
   const projects = [
     {
-        id: 0,
-        title: "Fyrre Magazine",
-        description: "Ultimate destination for premium coffee, tea, chocolate, and bakery delights worldwide.",
-        image: "/images/projects/capture.PNG",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/arsalanlal414/Fyrre-Magazine",
-        previewUrl: "https://fyrre-magazine-five.vercel.app/",
-      },
+      id: 0,
+      title: "Fyrre Magazine",
+      description: "A dynamic magazine platform where users can explore detailed articles and much more.",
+      image: "/images/projects/capture.PNG",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/arsalanlal414/Fyrre-Magazine",
+      previewUrl: "https://fyrre-magazine-five.vercel.app/"
+    },
     {
       id: 1,
       title: "Java Times Cafe",
